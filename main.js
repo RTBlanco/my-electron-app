@@ -9,6 +9,9 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   })
+  // i guess this might be an apple only issue because 
+  // given that only mac keeps app open but closes the window
+  // my guess i have somewhere reset the ipcMain.handle
   ipcMain.handle('ping', () => 'pong')
   win.loadFile('index.html')
 }
